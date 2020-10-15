@@ -107,21 +107,21 @@
 
                  <div class="grid grid-cols-8 gap-4 content-center px-40 py-5  items-center">
                     <div class="col-span-8">
-                      <p class="text-xl text-gray-700">Shipping Address</p>
+                      <p class="text-xl text-gray-700">Shipping method</p>
                     </div>
                     <div class="col-span-8">
 
                      <div v-tilt="{scale: 1.2}" class="inline-block relative w-64">
                             <select class="input leading-tight focus:outline-none focus:shadow-outline" v-model="fields.fulfillment.shipping_method" name="">
-                <option value="">Choose a shipping method</option>
-                        <option
+                              <option value="">Choose a shipping method</option>
+                              <option
                                 :key="index"
                                 v-for="(option, index) in shippingOptions"
                                 :value="option.id"
                               >
                                 {{option.description}} - {{option.price.formatted_with_symbol}}
                               </option>
-              </select>
+                            </select>
                             <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                                 <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
                             </div>

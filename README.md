@@ -1,11 +1,13 @@
-
 ## Commerce.js Unnecessary Storefront 🎉
 
-### Notice: This repo is *not* maintained
-We put together this storefront to get designers & developers creative juices flow, this store is fully functional, you can switch out the API keys and start using this store in the wild.
+[![Join Us on Slack](https://github.com/chec/example-unnecessary-storefront/blob/master/src/assets/demo.gif)](http://slack.commercejs.com)
 
+### Notice: Due to the expermental/one-off nature of this example storefront we cannot provide any code support and this repo is *not* maintained.
+I started this storefront during one of our hack days @ Commerce.js (Commercejs.com)  to get designers & developers creative juices flowing around what can be done and experimented with at the checkout. 
 
-This storefront was developeed ontop of our Vuejs Boilerplate (https://github.com/chec/commercejs-vuejs-boilerplate). 
+This store is fully functional, you can switch out the API keys and start using this store in the wild.
+
+This storefront was developeed ontop of our Commmerce.js Vuejs Boilerplate (https://github.com/chec/commercejs-vuejs-boilerplate). 
 
 Uses:
 - Vue.js
