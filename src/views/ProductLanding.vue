@@ -1,11 +1,11 @@
 <template>
   <div>
     <h2 class="text-3xl font-light text-gray-800 text-center py-20  ">
-        Commerce.js Unnecessary Parallax Storefront
+        <a href="https://commercejs.com">Commerce.js</a> Unnecessary Parallax Storefront
+         <p class="font-light text-xl text-gray-800 py-5 text-center ">View the <a class="text-blue-600 underline" href="https://github.com/dvnkshl/example-unnecessary-storefront">code on GitHub</a></p>
     </h2>
-    <div v-if="this.filteredItems"
-      class="product-listing grid grid-cols-3 gap-6"
-    >
+
+    <div v-if="this.filteredItems" class="product-listing grid grid-cols-3 gap-6">
         <ProductItem
           @add-to-cart="$emit('add-to-cart', $event)"
           v-for="(product, index) in filteredItems" :key="index"

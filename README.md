@@ -1,8 +1,7 @@
-## Commerce.js Unnecessary Storefront 🎉
+## Unnecessary Commerce.js Storefront 🎉
 
 [![Join Us on Slack](https://github.com/chec/example-unnecessary-storefront/blob/master/src/assets/demo.gif)](http://slack.commercejs.com)
 
-### Notice: Due to the expermental/one-off nature of this example storefront we cannot provide any code support and this repo is *not* maintained.
 I started this storefront during one of our hack days @ Commerce.js (Commercejs.com)  to get designers & developers creative juices flowing around what can be done and experimented with at the checkout. 
 
 This store is fully functional, you can switch out the API keys and start using this store in the wild.
