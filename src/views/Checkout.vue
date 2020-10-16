@@ -9,9 +9,8 @@
 
             <a href="/" class="text-sm cursor-pointer absolute top-0 right-0 bg-gray-800 text-center  text-white rounded mt-10 mr-10 px-4 rounded-full py-2  shadow-lg" style="transform: translateZ(20px)"><b>Go back</b> to the storefront</a>
 
-
-            <div v-if="message.copy !== ''" style="color:red">
-                <strong>Holy guacamole!</strong> an error occured:
+             <div v-if="message.copy !== ''" v-tilt class="bg-red-600 px-4 py-3 text-white block place-self-center place-self-center rounded-md shadow-md fixed left-0 top-0 mt-5 ml-5">
+                <strong>Error!</strong> an error occured:
                 <p v-html="message.copy">Loading...</p>
             </div>
 
@@ -279,7 +278,7 @@ export default {
             handler() {
                 setTimeout(() => {
                     this.message.copy = '';
-                }, 3000);
+                }, 10000);
             },
             deep: true,
         },
@@ -381,6 +380,11 @@ export default {
          * @return {object} Order object to be used for reciepts.
          */
         captureCheckout() {
+
+            if(this.fields.fulfillment.shipping_method === ''){
+              this.message.copy = 'Please select a shipping method!';
+              return;
+            }
             //Increase confetti!
             this.confettiExtreme();
             this.isCapturing = true;
@@ -397,8 +401,10 @@ export default {
                 this.$parent.getCart();
                 this.$router.push('/order-confirmation');
             }).catch((error) => {
+                this.confettiNormal();
                 this.isCapturing = false;
-                this.message.copy = `<strong>${error.data.status_code}</strong>: ${error.data.error.message}`;
+                var firstErrorKey = Object.keys(error.data.error.errors)[0];
+                this.message.copy = `${error.data.error.errors[firstErrorKey][0]}`;
             });
         },
         /**
@@ -458,7 +464,7 @@ export default {
                     this.generateLiveObject();
                 })
                 .catch((error) => {
-                    this.message.copy = `<strong>Error:</strong>: ${error.data.error.message}`;
+                    this.message.copy = `${error.data.error.message}`;
                 });
         },
         /**
@@ -482,7 +488,7 @@ export default {
                     this.generateLiveObject();
                 })
                 .catch((error) => {
-                    this.message.copy = `<strong>Error:</strong>: ${error.data.error.message}`;
+                    this.message.copy = `${error.data.error.message}`;
                 });
         },
     },
